@@ -53,7 +53,7 @@ Animator:
   m_GameObject: {fileID: 181008}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2acad2c3c4bd2eb43b52884aef0e9d86, type: 2}
+  m_Controller: {fileID: 9100000, guid: 36233bd876172d140be7ee7037b3a895, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -87,7 +87,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c0adfd635e6b3744bbb2011734c3681f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ddad57d28f18f7a41a2d49fc5403e827, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -145,7 +145,12 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 2acad2c3c4bd2eb43b52884aef0e9d86, type: 2}
+      objectReference: {fileID: 9100000, guid: 36233bd876172d140be7ee7037b3a895, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ddad57d28f18f7a41a2d49fc5403e827,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 181008}
