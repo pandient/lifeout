@@ -19,6 +19,8 @@ namespace lifeout.cultist
         [SerializeField]
         Sprite aliveSprite;
 
+      
+
         public ResurrectionAura aura;
 
         // Use this for initialization
@@ -56,8 +58,8 @@ namespace lifeout.cultist
 
         void OnMouseUpAsButton()
         {
-           
-                flip();
+            GetComponent<AudioSource>().Play();
+             flip();
                 int currentx = (int)transform.position.x;
                 int currenty = (int)transform.position.y;
                 flipSurrounding(currentx, currenty);
