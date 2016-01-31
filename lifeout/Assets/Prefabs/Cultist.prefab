@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Cultist
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &436936
 Transform:
@@ -44,7 +44,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.25, y: 0.25}
+  m_Size: {x: 1, y: 1}
 --- !u!82 &8206502
 AudioSource:
   m_ObjectHideFlags: 1
@@ -55,7 +55,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -131,8 +131,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  deadSprite: {fileID: 21300000, guid: 278a6f1c2015fa64c8ff930880736d7a, type: 3}
-  aliveSprite: {fileID: 21300000, guid: 00f302c7de020a84b9caaa40dbc43213, type: 3}
+  deadSprite: {fileID: 21300000, guid: 349a6a37157a7c2448caff560c5fbf01, type: 3}
+  aliveSprite: {fileID: 21300000, guid: 2f038ab5d58424b4caa70b6646336061, type: 3}
+  aura: {fileID: 0}
 --- !u!212 &21266776
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -159,7 +160,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 278a6f1c2015fa64c8ff930880736d7a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 349a6a37157a7c2448caff560c5fbf01, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -181,7 +182,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 278a6f1c2015fa64c8ff930880736d7a,
+      objectReference: {fileID: 21300000, guid: 349a6a37157a7c2448caff560c5fbf01,
         type: 3}
     - target: {fileID: 0}
       propertyPath: panLevelCustomCurve.m_RotationOrder
@@ -214,12 +215,12 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: deadSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 278a6f1c2015fa64c8ff930880736d7a,
+      objectReference: {fileID: 21300000, guid: 349a6a37157a7c2448caff560c5fbf01,
         type: 3}
     - target: {fileID: 0}
       propertyPath: aliveSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 00f302c7de020a84b9caaa40dbc43213,
+      objectReference: {fileID: 21300000, guid: 2f038ab5d58424b4caa70b6646336061,
         type: 3}
     - target: {fileID: 0}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -231,11 +232,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Size.x
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Size.y
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_UsedByEffector
@@ -244,6 +245,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
