@@ -4,7 +4,7 @@ using System.Collections;
 public class MusicPlayer : MonoBehaviour {
 
 	static readonly string[] bgm_tracks = {
-//		"Audio/bgm01",
+        "Audio/tribal low chant loop (Scott F. Thompson).wav",
 //		"Audio/bgm02",
 //		"Audio/bgm03"
 	};
@@ -26,7 +26,9 @@ public class MusicPlayer : MonoBehaviour {
 	}
 
 	void Start () {
-//		StartCoroutine(PlayNextSong());
+        	//	StartCoroutine(PlayNextSong());
+        audio_source.loop = true;
+        audio_source.Play();
 	}
 
     static void InitSoundtracks () {
