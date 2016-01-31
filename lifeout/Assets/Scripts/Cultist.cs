@@ -1,70 +1,75 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Debug = System.Diagnostics.Debug;
 
 namespace lifeout.cultist 
 {
-
-    enum CultistState { DEAD, ALIVE }
+    internal enum CultistState { DEAD, ALIVE }
     
-    public class Cultist : MonoBehaviour 
+    public class Cultist : MonoBehaviour
     {
-        [SerializeField]
-        CultistState state = CultistState.DEAD;
 
         [SerializeField]
-        Sprite deadSprite;
+        CultistState State = CultistState.DEAD;
 
         [SerializeField]
-        Sprite aliveSprite;
+        Sprite DeadSprite = null;
 
-        public ResurrectionAura aura;
+        [SerializeField]
+        Sprite AliveSprite = null;
 
-        // Use this for initialization
+        [SerializeField]
+        GameObject Aura = null;
 
-        SpriteRenderer renderer;
+        SpriteRenderer _renderer;
 
-        void Start()
-        {
-            renderer = GetComponent<SpriteRenderer>();
+        void Start() {
+            _renderer = GetComponent<SpriteRenderer>();
         }
 
-        void OnMouseUpAsButton()
-        {
-            createResurrectionAura();
-        }
-
-        void OnTriggerEnter2D() {
-            if (state == CultistState.ALIVE)
-            {
-                die();
+        void OnMouseUpAsButton() {
+            if (State == CultistState.DEAD) {
+                CreateResurrectionAura();
             }
-            else
-            {
-                resurrect();
+            else {
+                CreateDeathAura();
             }
         }
 
-        void createResurrectionAura() {
-            Instantiate(aura, transform.position, transform.rotation);
-           
+        void CreateResurrectionAura() {
+            var aura = Instantiate(Aura, transform.position, transform.rotation) as GameObject;
+            Debug.Assert(aura != null, "aura != null");
+            //aura.transform.parent = transform;
+            StartCoroutine(DestroyAura(aura));
         }
 
-        private void die()
-        {
-            this.state = CultistState.DEAD;
-            renderer.sprite = deadSprite;
+        void CreateDeathAura() {
+            var aura = Instantiate(Aura, transform.position, transform.rotation) as GameObject;
+            Debug.Assert(aura != null, "aura != null");
+            aura.transform.parent = transform;
+            StartCoroutine(DestroyAura(aura));
         }
 
-        private void resurrect()
-        {
-            this.state = CultistState.ALIVE;
-            renderer.sprite = aliveSprite;
+        static IEnumerator DestroyAura (GameObject aura) {
+            var animator = aura.GetComponent<Animator>();
+            yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+            Destroy(aura);
         }
 
-        
+        void OnTriggerEnter2D () {
+            if (State == CultistState.DEAD) {
+                State = CultistState.ALIVE;
+                _renderer.sprite = AliveSprite;
+            }
+            else {
+                State = CultistState.DEAD;
+                _renderer.sprite = DeadSprite;
+            }
 
-        
+        }
+
     }
+
 }
 
 
