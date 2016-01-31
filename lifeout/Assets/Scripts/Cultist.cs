@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
+using System.Collections.Generic;
 
 namespace lifeout.cultist 
 {
@@ -21,19 +23,71 @@ namespace lifeout.cultist
 
         // Use this for initialization
 
-        SpriteRenderer renderer;
+        SpriteRenderer rend;
 
         void Start()
         {
-            renderer = GetComponent<SpriteRenderer>();
+            try
+            {
+                // Register in Grid
+                int x = (int)transform.position.x;
+                int y = (int)transform.position.y;
+                Debug.Log("" + x + " " + y);
+                Grid.cultists.Add(new Vector2(x, y), this);
+                rend = GetComponent<SpriteRenderer>();
+
+                if(state  == CultistState.ALIVE)
+                {
+                    rend.sprite = aliveSprite;
+                }else
+                {
+                    rend.sprite = deadSprite;
+                }
+
+            }
+            catch (System.Exception e )
+            {
+
+                throw e;
+            }
+          
+            
         }
 
         void OnMouseUpAsButton()
         {
-            createResurrectionAura();
+           
+                flip();
+                int currentx = (int)transform.position.x;
+                int currenty = (int)transform.position.y;
+                flipSurrounding(currentx, currenty);
+            
         }
 
-        void OnTriggerEnter2D() {
+        private void flipSurrounding(int currentx, int currenty)
+        {
+            List<Vector2> cultlist = new List<Vector2>();
+            //cultlist.Add(Grid.cultists[new Vector2(currentx + 1, currenty + 1)]);
+            //cultlist.Add(Grid.cultists[new Vector2(currentx - 1, currenty + 1)]);
+            //cultlist.Add(Grid.cultists[new Vector2(currentx + 1, currenty - 1)]);
+            //cultlist.Add(Grid.cultists[new Vector2(currentx - 1, currenty - 1)]);
+
+            cultlist.Add(new Vector2(currentx - 1, currenty + 0));
+            cultlist.Add(new Vector2(currentx + 0, currenty - 1));
+            cultlist.Add(new Vector2(currentx - 0, currenty + 1));
+            cultlist.Add(new Vector2(currentx + 1, currenty + 0));
+
+            foreach (var v in cultlist)
+            {
+                if (Grid.cultists.ContainsKey(v)) {
+                    Grid.cultists[v].flip();  
+                }
+            }
+
+        }
+
+        public void flip()
+        {
             if (state == CultistState.ALIVE)
             {
                 die();
@@ -43,6 +97,7 @@ namespace lifeout.cultist
                 resurrect();
             }
         }
+        
 
         void createResurrectionAura() {
             Instantiate(aura, transform.position, transform.rotation);
@@ -52,13 +107,13 @@ namespace lifeout.cultist
         private void die()
         {
             this.state = CultistState.DEAD;
-            renderer.sprite = deadSprite;
+            rend.sprite = deadSprite;
         }
 
         private void resurrect()
         {
             this.state = CultistState.ALIVE;
-            renderer.sprite = aliveSprite;
+            rend.sprite = aliveSprite;
         }
 
         
