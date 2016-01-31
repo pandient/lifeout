@@ -17,11 +17,15 @@ namespace lifeout.cultist
         [SerializeField]
         Sprite aliveSprite;
 
-        public ResurrectionAura aura;
+        [SerializeField]
+        ResurrectionAura aura;
+
+        Object bob;
 
         // Use this for initialization
 
         SpriteRenderer renderer;
+        Collider2D collider;
 
         void Start()
         {
@@ -30,12 +34,20 @@ namespace lifeout.cultist
 
         void OnMouseUpAsButton()
         {
+            //flip();
             createResurrectionAura();
+
         }
 
-        void OnTriggerEnter2D() {
-            if (state == CultistState.ALIVE)
-            {
+        void OnCollisionStay2D(Collision2D coll)
+        {
+            Debug.Log("asdfasd");
+            flip();
+            Destroy(bob);
+        }
+
+        void flip() {
+            if (state == CultistState.ALIVE) {
                 die();
             }
             else
@@ -45,8 +57,7 @@ namespace lifeout.cultist
         }
 
         void createResurrectionAura() {
-            Instantiate(aura, transform.position, transform.rotation);
-           
+            bob = Instantiate(aura, transform.position, transform.rotation);
         }
 
         private void die()
