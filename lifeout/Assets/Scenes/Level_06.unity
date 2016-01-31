@@ -136,6 +136,10 @@ Prefab:
       propertyPath: m_Offset.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
   m_IsPrefabParent: 0
@@ -248,6 +252,10 @@ Prefab:
       propertyPath: m_Offset.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
   m_IsPrefabParent: 0
@@ -306,6 +314,10 @@ Prefab:
       propertyPath: m_Offset.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
   m_IsPrefabParent: 0
@@ -359,6 +371,10 @@ Prefab:
     - target: {fileID: 176060, guid: c433f325f44d81b47aa59610f7098922, type: 2}
       propertyPath: m_Name
       value: Cultist
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
@@ -418,6 +434,10 @@ Prefab:
       propertyPath: m_Offset.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
   m_IsPrefabParent: 0
@@ -471,6 +491,14 @@ Prefab:
     - target: {fileID: 176060, guid: c433f325f44d81b47aa59610f7098922, type: 2}
       propertyPath: m_Name
       value: Cultist
+      objectReference: {fileID: 0}
+    - target: {fileID: 8206502, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: MinDistance
+      value: 0.96063423
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
@@ -530,6 +558,10 @@ Prefab:
       propertyPath: m_Offset.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
   m_IsPrefabParent: 0
@@ -583,6 +615,10 @@ Prefab:
     - target: {fileID: 176060, guid: c433f325f44d81b47aa59610f7098922, type: 2}
       propertyPath: m_Name
       value: Cultist
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
@@ -909,6 +945,10 @@ Prefab:
       propertyPath: m_Offset.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
   m_IsPrefabParent: 0
@@ -1034,6 +1074,10 @@ Prefab:
     - target: {fileID: 6122292, guid: c433f325f44d81b47aa59610f7098922, type: 2}
       propertyPath: m_Offset.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
@@ -1271,6 +1315,10 @@ Prefab:
     - target: {fileID: 6122292, guid: c433f325f44d81b47aa59610f7098922, type: 2}
       propertyPath: m_Offset.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
@@ -1581,6 +1629,10 @@ Prefab:
       propertyPath: m_Offset.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
   m_IsPrefabParent: 0
@@ -1805,6 +1857,10 @@ Prefab:
       propertyPath: m_Name
       value: Cultist
       objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
   m_IsPrefabParent: 0
@@ -1863,6 +1919,10 @@ Prefab:
       propertyPath: m_Offset.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
   m_IsPrefabParent: 0
@@ -1920,6 +1980,10 @@ Prefab:
     - target: {fileID: 6122292, guid: c433f325f44d81b47aa59610f7098922, type: 2}
       propertyPath: m_Offset.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
@@ -2207,6 +2271,10 @@ Prefab:
       propertyPath: m_UsedByEffector
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
   m_IsPrefabParent: 0
@@ -2485,6 +2553,10 @@ Prefab:
       propertyPath: m_Offset.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
   m_IsPrefabParent: 0
@@ -2605,6 +2677,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
   m_IsPrefabParent: 0
@@ -2694,6 +2770,10 @@ Prefab:
       propertyPath: m_Name
       value: Cultist
       objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
   m_IsPrefabParent: 0
@@ -2747,6 +2827,10 @@ Prefab:
     - target: {fileID: 176060, guid: c433f325f44d81b47aa59610f7098922, type: 2}
       propertyPath: m_Name
       value: Cultist
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
@@ -2802,6 +2886,10 @@ Prefab:
       propertyPath: m_Name
       value: Cultist
       objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
   m_IsPrefabParent: 0
@@ -2855,6 +2943,10 @@ Prefab:
     - target: {fileID: 176060, guid: c433f325f44d81b47aa59610f7098922, type: 2}
       propertyPath: m_Name
       value: Cultist
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
@@ -2910,6 +3002,10 @@ Prefab:
       propertyPath: m_Name
       value: Cultist
       objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
   m_IsPrefabParent: 0
@@ -2964,6 +3060,10 @@ Prefab:
       propertyPath: m_Name
       value: Cultist
       objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
   m_IsPrefabParent: 0
@@ -3017,6 +3117,10 @@ Prefab:
     - target: {fileID: 176060, guid: c433f325f44d81b47aa59610f7098922, type: 2}
       propertyPath: m_Name
       value: Cultist
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
@@ -3164,6 +3268,10 @@ Prefab:
     - target: {fileID: 6122292, guid: c433f325f44d81b47aa59610f7098922, type: 2}
       propertyPath: m_Offset.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
@@ -3350,6 +3458,10 @@ Prefab:
       propertyPath: m_Name
       value: Cultist
       objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
   m_IsPrefabParent: 0
@@ -3461,6 +3573,10 @@ Prefab:
     - target: {fileID: 6122292, guid: c433f325f44d81b47aa59610f7098922, type: 2}
       propertyPath: m_Offset.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
@@ -3574,6 +3690,10 @@ Prefab:
       propertyPath: m_Offset.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
   m_IsPrefabParent: 0
@@ -3627,6 +3747,10 @@ Prefab:
     - target: {fileID: 176060, guid: c433f325f44d81b47aa59610f7098922, type: 2}
       propertyPath: m_Name
       value: Cultist
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
@@ -4019,6 +4143,10 @@ Prefab:
     - target: {fileID: 6122292, guid: c433f325f44d81b47aa59610f7098922, type: 2}
       propertyPath: m_Offset.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429090, guid: c433f325f44d81b47aa59610f7098922, type: 2}
+      propertyPath: State
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c433f325f44d81b47aa59610f7098922, type: 2}
