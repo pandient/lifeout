@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
+using System.Collections.Generic;
 
 namespace lifeout.cultist 
 {
@@ -17,37 +19,86 @@ namespace lifeout.cultist
         [SerializeField]
         Sprite aliveSprite;
 
-        [SerializeField]
-        ResurrectionAura aura;
-
-        Object bob;
+        public ResurrectionAura aura;
 
         // Use this for initialization
 
-        SpriteRenderer renderer;
-        Collider2D collider;
+        SpriteRenderer rend;
 
         void Start()
         {
-            renderer = GetComponent<SpriteRenderer>();
+            try
+            {
+                // Register in Grid
+                int x = (int)transform.position.x;
+                int y = (int)transform.position.y;
+                Debug.Log("" + x + " " + y);
+                Grid.cultists.Add(new Vector2(x, y), this);
+                rend = GetComponent<SpriteRenderer>();
+
+                if(state  == CultistState.ALIVE)
+                {
+                    rend.sprite = aliveSprite;
+                }else
+                {
+                    rend.sprite = deadSprite;
+                }
+
+            }
+            catch (System.Exception e )
+            {
+
+                throw e;
+            }
+          
+            
         }
 
         void OnMouseUpAsButton()
         {
-            //flip();
-            createResurrectionAura();
-
+           
+                flip();
+                int currentx = (int)transform.position.x;
+                int currenty = (int)transform.position.y;
+                flipSurrounding(currentx, currenty);
+            
         }
 
-        void OnCollisionStay2D(Collision2D coll)
+        private void flipSurrounding(int currentx, int currenty)
         {
-            Debug.Log("asdfasd");
-            flip();
-            Destroy(bob);
+            List<Vector2> cultlist = new List<Vector2>();
+            //cultlist.Add(Grid.cultists[new Vector2(currentx + 1, currenty + 1)]);
+            //cultlist.Add(Grid.cultists[new Vector2(currentx - 1, currenty + 1)]);
+            //cultlist.Add(Grid.cultists[new Vector2(currentx + 1, currenty - 1)]);
+            //cultlist.Add(Grid.cultists[new Vector2(currentx - 1, currenty - 1)]);
+
+            cultlist.Add(new Vector2(currentx - 1, currenty + 0));
+            cultlist.Add(new Vector2(currentx + 0, currenty - 1));
+            cultlist.Add(new Vector2(currentx - 0, currenty + 1));
+            cultlist.Add(new Vector2(currentx + 1, currenty + 0));
+
+            var checkWin = true;
+            foreach (var v in cultlist)
+            {
+                if (Grid.cultists.ContainsKey(v)) {
+                    Grid.cultists[v].flip();
+                    if (Grid.cultists[v].isAlive()) {
+                        checkWin = false;
+                    }
+                }
+            }
+            if (checkWin)
+            {
+                Grid.isFinished();
+            }
+
         }
 
-        void flip() {
-            if (state == CultistState.ALIVE) {
+
+        public void flip()
+        {
+            if (state == CultistState.ALIVE)
+            {
                 die();
             }
             else
@@ -55,24 +106,29 @@ namespace lifeout.cultist
                 resurrect();
             }
         }
+        
 
         void createResurrectionAura() {
-            bob = Instantiate(aura, transform.position, transform.rotation);
+            Instantiate(aura, transform.position, transform.rotation);
+           
         }
 
         private void die()
         {
             this.state = CultistState.DEAD;
-            renderer.sprite = deadSprite;
+            rend.sprite = deadSprite;
         }
 
         private void resurrect()
         {
             this.state = CultistState.ALIVE;
-            renderer.sprite = aliveSprite;
+            rend.sprite = aliveSprite;
         }
 
-        
+        public Boolean isAlive()
+        {
+            return state.Equals(CultistState.ALIVE) ? true : false;
+        }
 
         
     }
