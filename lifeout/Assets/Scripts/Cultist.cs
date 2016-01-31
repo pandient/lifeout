@@ -2,6 +2,7 @@
 using System.Collections;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace lifeout.cultist 
 {
@@ -11,82 +12,68 @@ namespace lifeout.cultist
     public class Cultist : MonoBehaviour 
     {
         [SerializeField]
-        CultistState state = CultistState.DEAD;
+        CultistState State = CultistState.DEAD;
 
         [SerializeField]
-        Sprite deadSprite;
+        Sprite DeadSprite;
 
         [SerializeField]
-        Sprite aliveSprite;
+        Sprite AliveSprite;
 
-      
-
-        public ResurrectionAura aura;
+        [SerializeField]
+        GameObject Aura;
 
         // Use this for initialization
 
-        SpriteRenderer rend;
+        SpriteRenderer _renderer;
 
         void Start()
         {
             try
             {
                 // Register in Grid
-                int x = (int)transform.position.x;
-                int y = (int)transform.position.y;
+                var x = (int)transform.position.x;
+                var y = (int)transform.position.y;
                 Debug.Log("" + x + " " + y);
                 Grid.cultists.Add(new Vector2(x, y), this);
-                rend = GetComponent<SpriteRenderer>();
-
-                if(state  == CultistState.ALIVE)
-                {
-                    rend.sprite = aliveSprite;
-                }else
-                {
-                    rend.sprite = deadSprite;
-                }
+                _renderer = GetComponent<SpriteRenderer>();
+                _renderer.sprite = State  == CultistState.ALIVE ? AliveSprite : DeadSprite;
 
             }
-            catch (System.Exception e )
-            {
-
-                throw e;
+            catch (Exception) {
+                // ignored
             }
-          
-            
         }
 
         void OnMouseUpAsButton()
         {
-            GetComponent<AudioSource>().Play();
-             flip();
-                int currentx = (int)transform.position.x;
-                int currenty = (int)transform.position.y;
-                flipSurrounding(currentx, currenty);
+            CreateAura();
+            Flip();
+            var currentx = (int)transform.position.x;
+            var currenty = (int)transform.position.y;
+            FlipSurrounding(currentx, currenty);
             
         }
 
-        private void flipSurrounding(int currentx, int currenty)
+        static void FlipSurrounding(int currentx, int currenty)
         {
-            List<Vector2> cultlist = new List<Vector2>();
+            var cultlist = new List<Vector2> {
+                new Vector2(currentx - 1, currenty + 0),
+                new Vector2(currentx + 0, currenty - 1),
+                new Vector2(currentx - 0, currenty + 1),
+                new Vector2(currentx + 1, currenty + 0)
+            };
             //cultlist.Add(Grid.cultists[new Vector2(currentx + 1, currenty + 1)]);
             //cultlist.Add(Grid.cultists[new Vector2(currentx - 1, currenty + 1)]);
             //cultlist.Add(Grid.cultists[new Vector2(currentx + 1, currenty - 1)]);
             //cultlist.Add(Grid.cultists[new Vector2(currentx - 1, currenty - 1)]);
 
-            cultlist.Add(new Vector2(currentx - 1, currenty + 0));
-            cultlist.Add(new Vector2(currentx + 0, currenty - 1));
-            cultlist.Add(new Vector2(currentx - 0, currenty + 1));
-            cultlist.Add(new Vector2(currentx + 1, currenty + 0));
 
             var checkWin = true;
-            foreach (var v in cultlist)
-            {
-                if (Grid.cultists.ContainsKey(v)) {
-                    Grid.cultists[v].flip();
-                    if (Grid.cultists[v].isAlive()) {
-                        checkWin = false;
-                    }
+            foreach (var v in cultlist.Where(v => Grid.cultists.ContainsKey(v))) {
+                Grid.cultists[v].Flip();
+                if (Grid.cultists[v].IsAlive()) {
+                    checkWin = false;
                 }
             }
             if (checkWin)
@@ -97,39 +84,46 @@ namespace lifeout.cultist
         }
 
 
-        public void flip()
+        public void Flip()
         {
-            if (state == CultistState.ALIVE)
+            if (State == CultistState.ALIVE)
             {
-                die();
+                Die();
             }
             else
             {
-                resurrect();
+                Resurrect();
             }
         }
         
 
-        void createResurrectionAura() {
-            Instantiate(aura, transform.position, transform.rotation);
-           
+        void CreateAura() {
+            var aura = Instantiate(Aura, transform.position, transform.rotation) as GameObject;
+            GetComponent<AudioSource>().Play();
+            StartCoroutine(DestroyAura(aura));
         }
 
-        private void die()
-        {
-            this.state = CultistState.DEAD;
-            rend.sprite = deadSprite;
+        static IEnumerator DestroyAura(GameObject aura) {
+            var animator = aura.GetComponent<Animator>();
+            yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+            Destroy(aura);
         }
 
-        private void resurrect()
+        void Die()
         {
-            this.state = CultistState.ALIVE;
-            rend.sprite = aliveSprite;
+            State = CultistState.DEAD;
+            _renderer.sprite = DeadSprite;
         }
 
-        public Boolean isAlive()
+        void Resurrect()
         {
-            return state.Equals(CultistState.ALIVE) ? true : false;
+            State = CultistState.ALIVE;
+            _renderer.sprite = AliveSprite;
+        }
+
+        public bool IsAlive()
+        {
+            return State.Equals(CultistState.ALIVE);
         }
 
         

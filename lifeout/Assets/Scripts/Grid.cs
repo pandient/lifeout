@@ -18,7 +18,7 @@ namespace lifeout.cultist
         public static Boolean isFinished() {
             foreach (var item in cultists)
             {
-                if (item.Value.isAlive())
+                if (item.Value.IsAlive())
                 {
                     return false;
                 }
